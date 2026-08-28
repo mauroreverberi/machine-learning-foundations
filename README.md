@@ -5,8 +5,8 @@
 
 ## Project Description
 I train and evaluate supervised machine learning models that predict from one
-year of financial statement ratios whether a company will go bankrupt within
-the next three years. I compare a dummy baseline, a hand-written solvency
+year of financial statement indicators whether a company will go bankrupt
+within the next three years. I compare a dummy baseline, a hand-written solvency
 rule, a logistic regression and a random forest, select the better learned
 model on a validation set, and turn its scores into an explicit operating
 decision through a threshold analysis. The selected model is evaluated once
@@ -45,6 +45,19 @@ tabular format, a CSV table with a small attribute header. The notebook uses
 the `3year` file (10,503 companies, 64 financial indicators, 495 bankrupt
 within three years) and reads it directly from the archive, so no extraction
 or conversion step is needed and the data stays exactly as UCI publishes it.
+
+## Main Results
+The random forest won the model comparison on validation average precision
+(0.4687 against 0.3035 for the logistic regression) and was carried forward
+alone. Its scores feed a three-band operating policy with two thresholds
+fixed on the validation set, urgent review from a score of 0.160 and
+watchlist from 0.047. On the untouched test set the frozen policy put 99 of
+the 2,084 companies into urgent review, 48 of them real future bankruptcies
+(48.5%), and the two flagged bands together caught 85.9% of the bankruptcies
+in the test set, with a test average precision of 0.5108. The most
+surprising finding was that the most important input of the forest is the
+missing indicator of one ratio (Attr27), the gaps in the data carry signal
+of their own.
 
 ## How to Run the Project
 1. Clone this repository.
