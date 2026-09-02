@@ -4,8 +4,8 @@
 (all commits and the `develop` branch as well as the `main` branch are visible there)
 
 ## Project Description
-I train and evaluate supervised machine learning models that predict from one
-snapshot of financial statement indicators whether a company will go bankrupt
+I train and evaluate supervised machine learning models that predict from the
+financial statement indicators of a company whether it will go bankrupt
 within the next three years. I compare a dummy baseline, a hand-written solvency
 rule, a logistic regression and a random forest, select the better learned
 model on a validation set, and turn its scores into an explicit operating
