@@ -45,6 +45,9 @@ tabular format, a CSV table with a small attribute header. The notebook uses
 the `3year` file (10,503 companies, 64 financial indicators, 495 bankrupt
 within three years) and reads it directly from the archive, so no extraction
 or conversion step is needed and the data stays exactly as UCI publishes it.
+For convenience, `3year.arff` is also included as an extracted, byte-identical
+copy of that file, so the data can be opened directly as a plain text table.
+The notebook itself reads the file from the archive.
 
 ## Main Results
 The random forest won the model comparison on validation average precision
