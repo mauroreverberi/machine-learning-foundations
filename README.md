@@ -6,7 +6,7 @@
 ## Project Description
 I train and evaluate supervised machine learning models that predict from the
 financial statement indicators of a company whether it will go bankrupt
-within the next three years. I compare a dummy baseline, a hand-written solvency
+three years later. I compare a dummy baseline, a hand-written solvency
 rule, a logistic regression and a random forest, select the better learned
 model on a validation set, and turn its scores into an explicit operating
 decision through a threshold analysis. The selected model is evaluated once
@@ -44,10 +44,11 @@ holds five ARFF files, one per forecasting horizon, all on Polish companies
 from the manufacturing sector. An ARFF file is a
 tabular format, a CSV table with a small attribute header. The notebook uses
 the `3year` file (10,503 companies, 64 financial indicators, 495 bankrupt
-within three years) and reads it directly from the archive, so no extraction
+three years later) and reads it directly from the archive, so no extraction
 or conversion step is needed and the data stays exactly as UCI publishes it.
-For convenience, `3year.arff` is also included as an extracted, byte-identical
-copy of that file, so the data can be opened directly as a plain text table.
+For convenience, `3year.arff` is also included as an extracted copy of that
+file with the same content (only the line endings differ from the archived
+version), so the data can be opened directly as a plain text table.
 The notebook itself reads the file from the archive.
 
 ## Main Results
