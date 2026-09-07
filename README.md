@@ -40,7 +40,8 @@ https://archive.ics.uci.edu/dataset/365/polish+companies+bankruptcy+data
 
 The original archive `polish+companies+bankruptcy+data.zip` is included
 unchanged in this repository, I downloaded it on 2026-08-24. The archive
-holds five ARFF files, one per forecasting horizon. An ARFF file is a
+holds five ARFF files, one per forecasting horizon, all on Polish companies
+from the manufacturing sector. An ARFF file is a
 tabular format, a CSV table with a small attribute header. The notebook uses
 the `3year` file (10,503 companies, 64 financial indicators, 495 bankrupt
 within three years) and reads it directly from the archive, so no extraction
@@ -54,7 +55,7 @@ The random forest won the model comparison on validation average precision
 (0.4687 against 0.3035 for the logistic regression) and was carried forward
 alone. Its scores feed a three-band operating policy with two thresholds
 fixed on the validation set, urgent review from a score of 0.160 and
-watchlist from 0.047. On the untouched test set the frozen policy put 99 of
+watchlist from 0.047 (approximately 0.04667). On the untouched test set the frozen policy put 99 of
 the 2,084 companies into urgent review, 48 of them real future bankruptcies
 (48.5%), and the two flagged bands together caught 85.9% of the bankruptcies
 in the test set, with a test average precision of 0.5108. The most
